@@ -24,6 +24,33 @@
                                     <th>カテゴリー</th>
                                     <td><c:out value="${shop.category}" /></td>
                                 </tr>
+
+
+                                <tr>
+                                    <th>営業時間(平日)</th>
+                                    <td><c:out value="${shop.open_at1} ～ ${shop.close_at1}" /></td>
+                                </tr>
+                                <tr>
+                                    <th>営業時間(休日)</th>
+                                    <td><c:out value="${shop.open_at2} ～ ${shop.close_at2}" /></td>
+                                </tr>
+                                <tr>
+                                    <th>定休日</th>
+                                    <td><c:out value="${shop.holiday}" /></td>
+                                </tr>
+                                <tr>
+                                    <th>住所</th>
+                                    <td><c:out value="${shop.address}" /></td>
+                                </tr>
+                                <tr>
+                                    <th>電話番号</th>
+                                    <td><c:out value="${shop.tel}" /></td>
+                                </tr>
+
+                                <tr>
+                                    <th>ホームページ</th>
+                                    <td><a href="<c:url value='${shop.homepage}' />">${shop.homepage}</a></td>
+                                </tr>
                                 <tr>
                                     <th>公開設定</th>
                                     <c:choose>
@@ -39,30 +66,7 @@
                                         </c:otherwise>
                                     </c:choose>
                                 </tr>
-                                <tr>
-                                    <th>住所</th>
-                                    <td><c:out value="${shop.address}" /></td>
-                                </tr>
-                                <tr>
-                                    <th>営業時間(平日)</th>
-                                    <td><c:out value="${shop.open_at1} ～ ${shop.close_at1}" /></td>
-                                </tr>
-                                <tr>
-                                    <th>営業時間(休日)</th>
-                                    <td><c:out value="${shop.open_at2} ～ ${shop.close_at2}" /></td>
-                                </tr>
-                                <tr>
-                                    <th>定休日</th>
-                                    <td><c:out value="${shop.holiday}" /></td>
-                                </tr>
-                                <tr>
-                                    <th>ホームページ</th>
-                                    <td><a href="<c:url value='${shop.homepage}' />">${shop.homepage}</a></td>
-                                </tr>
-                                <tr>
-                                    <th>電話番号</th>
-                                    <td><c:out value="${shop.tel}" /></td>
-                                </tr>
+
                                 <tr>
                                     <th>備考 ※不規則な営業時間・定休日等</th>
                                     <td>
