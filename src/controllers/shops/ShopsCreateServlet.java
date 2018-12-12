@@ -52,7 +52,30 @@ public class ShopsCreateServlet extends HttpServlet {
 		    s.setClose_at1((request.getParameter("close_at1h")) + ":" + (request.getParameter("close_at1m")));
 		    s.setOpen_at2((request.getParameter("open_at2h")) + ":" + (request.getParameter("open_at2m")));
             s.setClose_at2((request.getParameter("close_at2h")) + ":" + (request.getParameter("close_at2m")));
-            s.setHoliday(request.getParameter("holiday"));
+
+            /*checkboxの値は配列で受け取ることになるため、String型であるholidayには直接代入することが出来ない。
+             *よって、一旦適当な変数で配列の値を受け取り、for文で配列の要素の数だけ文字列を足して
+             *最終的な文字列をセッターに渡すことで対応する。
+             * また、合わせて未入力時の対応も記述する(未入力時には以降のfor文を実行させないようにする)。
+             */
+
+            String[] holidayList = request.getParameterValues("holiday");
+            String holiday = "";
+
+            if(holidayList != null) {
+                for(int i = 0; i < holidayList.length; i++) {
+                    if(i == 0) {
+                        holiday = holidayList[i];
+                    } else {
+                        holiday = holiday + ", " + holidayList[i];
+                    }
+                }
+            }
+
+            s.setHoliday(holiday);
+            //以上でsetHolidayの対応は終わり。
+
+
             s.setHomepage(request.getParameter("homepage"));
             s.setContent(request.getParameter("content"));
             s.setTel(request.getParameter("tel"));
@@ -61,25 +84,8 @@ public class ShopsCreateServlet extends HttpServlet {
             s.setUpdated_at(currentTime);
             //パラメータセットは以上
 
-            /* holidayの値取得が難しい…
-            if(request.getParameterValues("holiday").size > 1) {
-                s.setHoliday(request.getParameterValues("holiday");
-            } else {
-                s.setHoliday(request.getParameter("holiday")
 
-            またはフィールドholidayの配列化が必要？
 
-            private String[] holiday;
-
-            public String[] getHoliday() {
-            return holiday;
-            }
-
-            public void setHoliday(String[] holiday) {
-                this.holiday = holiday;
-            }
-
-            */
 
             List<String> errors = ShopValidator.validate(s);
             if(errors.size() > 0) {

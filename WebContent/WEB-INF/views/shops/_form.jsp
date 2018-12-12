@@ -25,9 +25,9 @@
 
         カテゴリー<br />
         <select name="category">
-            <option value="00">和食</option>
-            <option value="01">洋食・西洋料理</option>
-            <option value="02">中華料理</option>
+            <option value="和食">和食</option>
+            <option value="洋食・西洋料理">洋食・西洋料理</option>
+            <option value="中華料理">中華料理</option>
         </select>
         <br /><br />
 

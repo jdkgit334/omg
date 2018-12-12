@@ -51,13 +51,7 @@ public class ShopValidator {
 
 
 
-    private static String _validateAddress(String address) {
-        if(address == null || address.equals("")) {
-            return "住所を入力してください。";
-        }
 
-        return "";
-    }
 
     private static String _validateName(String name) {
         if(name == null || name.equals("")) {
@@ -110,7 +104,13 @@ public class ShopValidator {
         return "";
     }
 
+    private static String _validateAddress(String address) {
+        if(address == null || address.equals("")) {
+            return "住所を入力してください。";
+        }
 
+        return "";
+    }
 
 
 }
