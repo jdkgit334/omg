@@ -24,6 +24,15 @@ import javax.persistence.Table;
             name = "getShopsCount",
             query = "SELECT COUNT(s) FROM Shop AS s"
             ),
+    @NamedQuery(
+            name = "getMyAllShops",
+            query = "SELECT s FROM Shop AS s WHERE s.user = :user ORDER BY s.id DESC "
+            ),
+    @NamedQuery(
+            name = "getMyShopsCount",
+            query = "SELECT COUNT(s) FROM Shop AS s WHERE s.user = :user"
+            )
+
 })
 
 @Entity
