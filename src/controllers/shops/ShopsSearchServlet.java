@@ -88,8 +88,8 @@ public class ShopsSearchServlet extends HttpServlet {
             shops = areaList(shops, area);
 
 
-
-
+          //絞り込みで残ったレコードデータ数をshops_countへ反映
+            shops_count = shops.size();
 
 
 	    //最終的なページネーション用のshopリストデータを格納
@@ -142,8 +142,8 @@ public class ShopsSearchServlet extends HttpServlet {
              shops = cgList(shops, category);
              shops = areaList(shops, area);
 
-
-
+           //絞り込みで残ったレコードデータ数をshops_countへ反映
+             shops_count = shops.size();
 
 	       //最終的な各Shopデータを指定のjspで利用可能にする処理
 
