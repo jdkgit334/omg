@@ -43,7 +43,7 @@ public class ShopsUpdateServlet extends HttpServlet {
 
             s.setName(request.getParameter("name"));
             s.setCategory(request.getParameter("category"));
-            s.setDisclose(Integer.parseInt(request.getParameter("disclose")));
+            //s.setDisclose(Integer.parseInt(request.getParameter("disclose")));
             s.setAddress(request.getParameter("address"));
             s.setOpen_at1((request.getParameter("open_at1h")) + ":" + (request.getParameter("open_at1m")));
             s.setClose_at1((request.getParameter("close_at1h")) + ":" + (request.getParameter("close_at1m")));

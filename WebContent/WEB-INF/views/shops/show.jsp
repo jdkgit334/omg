@@ -61,7 +61,7 @@
                                         </c:when>
                                         <c:otherwise>
                                             <td>
-                                                非公開
+                                                公開
                                             </td>
                                         </c:otherwise>
                                     </c:choose>
@@ -102,7 +102,8 @@
                 </c:choose>
 
 
-                <p><a href="<c:url value='/shops/index' />">一覧に戻る</a></p>
+                <p><a href="<c:url value='/shops/index' />">ショップデータ一覧に戻る</a></p>
+                <p><a href="<c:url value='/' />">トップページに戻る</a></p>
             </c:param>
         </c:import>
     </body>

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Shop;
+import models.User;
 import utils.DBUtil;
 
 /**
@@ -35,19 +36,33 @@ public class ShopsIndexServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		EntityManager em = DBUtil.createEntityManager();
 
+		User login_user = (User)request.getSession().getAttribute("login_user");
+
 		int page;
 		try{
 		    page = Integer.parseInt(request.getParameter("page"));
 		} catch(Exception e) {
 		    page = 1;
 		}
-		List<Shop> shops = em.createNamedQuery("getAllShops", Shop.class)
+		/*List<Shop> shops = em.createNamedQuery("getAllShops", Shop.class)
 		                        .setFirstResult(15 * (page - 1))
 		                        .setMaxResults(15)
 		                        .getResultList();
 
 		long shops_count = (long)em.createNamedQuery("getShopsCount", Long.class)
-		                        .getSingleResult();
+		                        .getSingleResult(); */
+
+
+		List<Shop> shops = em.createNamedQuery("getMyAllShops", Shop.class)
+                .setParameter("user", login_user)
+                .setFirstResult(15 * (page - 1))
+                .setMaxResults(15)
+                .getResultList();
+
+long shops_count = (long)em.createNamedQuery("getMyShopsCount", Long.class)
+                  .setParameter("user", login_user)
+                  .getSingleResult();
+
 
 		em.close();
 

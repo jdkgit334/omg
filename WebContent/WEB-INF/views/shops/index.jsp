@@ -15,7 +15,9 @@
                         <c:out value="${flush}"></c:out>
                     </div>
                 </c:if>
-                <h2>お店 一覧</h2>
+                <h2>ショップデータ管理</h2>
+                あなたが登録済のショップデータの一覧を表示しています。<br />
+                未登録または追加登録する場合は<a href="<c:url value='/shops/new' />">「お店の新規登録」</a>から登録してください。<br /><br />
                 <table id="shop_list">
                     <tbody>
                         <tr>
@@ -54,6 +56,7 @@
                 </c:forEach>
             </div>
             <p><a href="<c:url value='/shops/new' />">お店の新規登録</a></p>
+            <p><a href="<c:url value='/' />">トップページに戻る</a></p>
             </c:param>
         </c:import>
     </body>

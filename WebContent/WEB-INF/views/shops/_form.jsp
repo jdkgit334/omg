@@ -235,10 +235,9 @@
         <textarea name="homepage" rows="2" cols="50">${shop.homepage}</textarea>
         <br /><br />
 
-        公開設定 (公開を選択すると他のユーザーもこのショップデータの閲覧に限り可能になります。)<br />
+        公開設定<br />
         <select name="disclose">
             <option value="00" selected>公開</option>
-            <option value="01">非公開</option>
         </select><br /><br />
 
 

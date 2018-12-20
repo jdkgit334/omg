@@ -56,7 +56,7 @@ public class TopPageIndexServlet extends HttpServlet {
 
         em.close();
 
-        request.setAttribute("shops", shops);
+        request.setAttribute("shops", shops); //←この行を消すとデフォルトのショップ一覧表示がOFFされる
         request.setAttribute("shops_count", shops_count);
         request.setAttribute("page", page);
 
