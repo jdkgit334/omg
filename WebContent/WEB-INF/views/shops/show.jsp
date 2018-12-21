@@ -27,11 +27,11 @@
 
 
                                 <tr>
-                                    <th>営業時間(平日)</th>
+                                    <th>営業時間(月～金)</th>
                                     <td><c:out value="${shop.open_at1} ～ ${shop.close_at1}" /></td>
                                 </tr>
                                 <tr>
-                                    <th>営業時間(休日)</th>
+                                    <th>営業時間(土～日)</th>
                                     <td><c:out value="${shop.open_at2} ～ ${shop.close_at2}" /></td>
                                 </tr>
                                 <tr>
@@ -54,14 +54,14 @@
                                 <tr>
                                     <th>公開設定</th>
                                     <c:choose>
-                                        <c:when test="${shop.disclose == 00}">
+                                        <c:when test="${shop.disclose == 1}">
                                             <td>
                                                 公開
                                             </td>
                                         </c:when>
                                         <c:otherwise>
                                             <td>
-                                                公開
+                                                非公開
                                             </td>
                                         </c:otherwise>
                                     </c:choose>
@@ -93,6 +93,9 @@
                         </table>
 
                         <c:if test="${sessionScope.login_user.id == shop.user.id}">
+                            <p><a href="<c:url value='/shops/edit?id=${shop.id}' />">このショップデータを編集する</a></p>
+                        </c:if>
+                        <c:if test="${sessionScope.login_user.admin_flag ==1}">
                             <p><a href="<c:url value='/shops/edit?id=${shop.id}' />">このショップデータを編集する</a></p>
                         </c:if>
                     </c:when>

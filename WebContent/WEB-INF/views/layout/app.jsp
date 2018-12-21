@@ -31,7 +31,7 @@
                 ${param.content}
             </div>
             <div id="footer">
-                by Tomoyuki Nishioka
+                © T.Nishi
             </div>
         </div>
     </body>

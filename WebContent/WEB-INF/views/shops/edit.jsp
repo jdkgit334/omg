@@ -31,6 +31,7 @@
 
 
             </c:when>
+
             <c:otherwise>
                 <h2>お探しのデータは見つかりませんでした。</h2>
             </c:otherwise>

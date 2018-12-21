@@ -22,8 +22,9 @@
                     <tbody>
                         <tr>
                             <th class="shop_name">店名</th>
-                            <th class="shop_open">開店時刻</th>
-                            <th class="shop_close">閉店時刻</th>
+                            <th class="shop_category2">カテゴリー</th>
+                            <th class="shop_open2">営業時間(月～金)</th>
+                            <th class="shop_close2">営業時間(土～日)</th>
                             <th class="shop_holiday">定休日</th>
                             <th class="shop_content">備考</th>
                             <th class="shop_action">操作</th>
@@ -31,8 +32,9 @@
                          <c:forEach var="shop" items="${shops}" varStatus="status">
                             <tr class="row${status.count % 2}">
                                 <td class="shop_name"><c:out value="${shop.name}" /></td>
-                                <td class="shop_open"><c:out value="${shop.open_at1}" /></td>
-                                <td class="shop_close"><c:out value="${shop.close_at1}" /></td>
+                                <td class="shop_category2"><c:out value="${shop.category}" /></td>
+                                <td><c:out value="${shop.open_at1} ～ ${shop.close_at1}" /></td>
+                                <td><c:out value="${shop.open_at2} ～ ${shop.close_at2}" /></td>
                                 <td class="shop_holiday"><c:out value="${shop.holiday}" /></td>
                                 <td class="shop_content"><c:out value="${shop.content}" /></td>
                                 <td class="shop_action"><a href="<c:url value='/shops/show?id=${shop.id}' />">詳細を見る</a></td>

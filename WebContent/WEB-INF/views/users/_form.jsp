@@ -42,10 +42,15 @@
             </c:if>
         </select>
 
-        <br /><br />
+        <br />
+
+                <p class="attention">※ユーザーID、ユーザー名、パスワード情報はお忘れにならないよう、<br />メモを取る等して保管してください。</p>
 
         <input type="hidden" name="_token" value="${_token}" />
-        <button type="submit">投稿</button>
+        <button type="submit">投稿</button><br />
+
+
+
 
 
     </body>

@@ -20,6 +20,10 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
+        <p>「食べに行きたいお店の候補はあるけど、この時間に営業していたっけ？」<br>なんて、考えたことありませんか？<br />飲食店検索アプリ「何食べよっか？」は、そんなシーンの一助になります。</p>
+        <p>※初めて利用される方は、<a class="u-line"  href="<c:url value='/users/new' />">新規ユーザーの登録</a>を行ってください。</p>
+
+
         <h2>ログイン</h2>
         <form method="POST" action="<c:url value='/login' />">
             <label for="code">ユーザーID</label><br />
@@ -33,9 +37,13 @@
             <input type="hidden" name="_token" value="${_token}" />
             <button type="submit">ログイン</button>
         </form>
-        <p>※初めて利用される方は、<a class="u-line"  href="<c:url value='/users/new' />">新規ユーザーの登録</a>を行ってください。</p>
+        <p>
+        パスワードを万一お忘れになった場合は、下記メールアドレス宛パスワード再発行を依頼してください。</p>
+        　termination_gfdm■yahoo.co.jp　※@は■に変えて記載しています。<br />
+        　件名：パスワード変更依頼<br />
+        　※本文に必ずユーザーID及びユーザー名を記載してください。<br />
 
     </c:param>
-</c:import>
+    </c:import>
     </body>
 </html>

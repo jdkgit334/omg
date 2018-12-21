@@ -16,10 +16,18 @@
                     </div>
                 </c:if>
 
-                <h2>何食べよっか？</h2>
+                <h2>ショップ検索フォーム</h2>
                 任意の条件にマッチする飲食店を検索・表示します。<br />
                 フォームに条件を指定のうえ、検索ボタンをクリックしてください。<br />
-                お店が未登録または追加登録する場合は<a href="<c:url value='/shops/new' />">「お店の新規登録」</a>から登録してください。<br /><br />
+                なお、実際にお店に行く前に、臨休等ないか念の為お店のホームページやSNSを確認してください。<br />
+                検索実行前はあなたが登録済のショップデータの一覧を表示しています。<br />
+                ※「他のユーザーのショップデータを含める」を選択すると、<br />
+                　他のユーザーの作成したお店も検索に含めることができます。<br />
+                　検索条件をうまく組み合わせて活用してください。<br />
+
+
+
+                <p class="attention">お店が未登録、または追加登録する場合は<a href="<c:url value='/shops/new' />">「お店の新規登録」</a>から登録してください。</p>
 
                 <form method="GET" action="<c:url value='/shops/search' />">
 
@@ -83,10 +91,41 @@
 
                 カテゴリー:
         <select name="category">
-            <option value="指定しない">指定しない</option>
-            <option value="和食">和食</option>
-            <option value="洋食・西洋料理">洋食・西洋料理</option>
+            <option value="指定しない" selected>指定しない</option>
+            <option value="日本料理">日本料理</option>
+            <option value="寿司">寿司</option>
+            <option value="魚介・海鮮料理">魚介・海鮮料理</option>
+            <option value="揚げ物">揚げ物</option>
+            <option value="ラーメン">ラーメン</option>
+            <option value="そば・うどん・その他麺類">そば・うどん・その他麺類</option>
+            <option value="鳥料理">鳥料理</option>
+            <option value="すき焼き・しゃぶしゃぶ">すき焼き・しゃぶしゃぶ</option>
+            <option value="おでん">おでん</option>
+            <option value="粉もの">粉もの</option>
+            <option value="郷土料理">郷土料理</option>
+            <option value="丼もの">丼もの</option>
+            <option value="和食その他">和食その他</option>
+            <option value="ステーキ・ハンバーグ">ステーキ・ハンバーグ</option>
+            <option value="パスタ・ピザ">パスタ・ピザ</option>
+            <option value="ハンバーガー">ハンバーガー</option>
+            <option value="洋食・欧風料理">洋食・欧風料理</option>
+            <option value="フレンチ">フレンチ</option>
+            <option value="イタリアン">イタリアン</option>
+            <option value="西洋各国料理">その他西洋各国料理</option>
             <option value="中華料理">中華料理</option>
+            <option value="韓国料理">韓国料理</option>
+            <option value="アジア・エスニック料理">アジア・エスニック料理</option>
+            <option value="カレー">カレー</option>
+            <option value="焼肉・ホルモン">焼肉・ホルモン</option>
+            <option value="鍋">鍋</option>
+            <option value="居酒屋・ダイニングバー">居酒屋・ダイニングバー</option>
+            <option value="創作料理">創作料理</option>
+            <option value="定食・レストラン">定食・レストラン</option>
+            <option value="弁当・おにぎり">弁当・おにぎり</option>
+            <option value="カフェ・喫茶店">カフェ・喫茶店</option>
+            <option value="パン・サンドイッチ">パン・サンドイッチ</option>
+            <option value="スイーツ">スイーツ</option>
+            <option value="その他">その他</option>
         </select><br />
 
         <label for="area">住所に</label>
@@ -116,8 +155,8 @@
                         <tr>
                             <th class="shop_name2">店名</th>
                             <th class="shop_category2">カテゴリー</th>
-                            <th class="shop_open2">営業時間(平日)</th>
-                            <th class="shop_close2">営業時間(休日)</th>
+                            <th class="shop_open2">営業時間(月～金)</th>
+                            <th class="shop_close2">営業時間(土～日)</th>
                             <th class="shop_holiday2">定休日</th>
                             <th class="shop_address2">住所</th>
                             <th class="shop_content2">備考</th>
